@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+        <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:id="@+id/rv_list"-->
+            <!--android:scrollbars="vertical"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--tools:listitem="@layout/row"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true"/>-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rl_buscar"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:textAllCaps="false"
+                android:text="Buscar"
+                android:padding="0dp"
+                android:textColor="@color/text_color_dark"
+                android:background="@drawable/btn_bg"
+                android:id="@+id/btn_buscar"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="10dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tb_bg"
+                android:id="@+id/tb_buscar"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_toLeftOf="@+id/btn_buscar"
+                android:layout_toStartOf="@+id/btn_buscar"
+                android:layout_marginRight="10dp"/>
+        </RelativeLayout>
+
+
+
+        <ListView
+            android:id="@+id/rv_list"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/row"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/rl_buscar"/>
+</RelativeLayout>

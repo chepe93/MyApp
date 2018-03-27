@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#0077fe</color>
+    <color name="secundaryColor">@color/colorAccent</color>
+    <color name="secundaryColorLIte">#459cfd</color>
+    <color name="colorTopBar">#2b2e33</color>
+    <color name="colorIconBar">@color/secundaryColor</color>
+    <color name="colorIconBarOff">#d3d3d3</color>
+    <color name="black">#323232</color>
+    <color name="white">#ffffff</color>
+    <color name="green">#00ff00</color>
+    <color name="blue">#0000ff</color>
+    <color name="gray">#d3d3d3</color>
+    <color name="text_color">@color/secundaryColor</color>
+    <color name="text_color_dark">@color/colorTopBar</color>
+    <color name="trasparent">#00000000</color>
+    <color name="trasparent_white">#aaffffff</color>
+    <color name="gray_lite">#3f434b</color>
+
+    <color name="list_edited">#fff2ab</color>
+    <color name="list_sync">#b7ffa5</color>
+    <color name="list_info">#80bcff</color>
+    <color name="list_error">#ff7779</color>
+    <color name="negro">#000</color>
+</resources>

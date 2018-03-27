@@ -1,0 +1,103 @@
+	{
+	"poliza": {
+        "Type": "Text",
+		"Title":"Poliza",
+        "id": "0",
+        "Default": "HOla mundo",
+        "Priority": "0",
+    	"ReadOnly": "true",
+		"TextColor": "#FF0000"
+	},
+	"estado": {
+        "Type": "String",
+		"Title":"SELECCIONA EL ESTADO",
+        "id": "1",
+        "Default": "",
+        "Priority": "1",
+        "Options": {
+			"-SELECCIONAR-":"-SELECCIONAR-",
+			"17-PREDIO EN SERVICIO":"17-PREDIO EN SERVICIO",
+			"19-VÁLVULA DE CORTE DAÑADA-":"19-VÁLVULA DE CORTE DAÑADA-",
+			"22-VÁLVULA DE CORTE MAL ORIENTADA-":"22-VÁLVULA DE CORTE MAL ORIENTADA-",
+			"24-NO SE EJECUTA POR ORDEN DE GAS NATURAL-":"24-NO SE EJECUTA POR ORDEN DE GAS NATURAL-",
+			"26-NICHO SIN DIMENSIONES REQUERIDAS-":"26-NICHO SIN DIMENSIONES REQUERIDAS-",
+			"28-DIRECCION ILOCALIZADA NO SE UBICA EN ETERRENO-":"28-DIRECCION ILOCALIZADA NO SE UBICA EN ETERRENO-",
+			"31-PREDIO DEMOLIDO-":"31-PREDIO DEMOLIDO-",
+			"32-NICHO SOLDADO-":"32-NICHO SOLDADO-",
+			"36-NICHO CON CANDADO-":"36-NICHO CON CANDADO-",
+			"37-MEDIDOR LEVANTADO-":"37-MEDIDOR LEVANTADO-",
+			"40-ZONA DE DIFICIL ACCESO-":"40-ZONA DE DIFICIL ACCESO-",
+			"41-MEDIDOR ENCERRADO-":"41-MEDIDOR ENCERRADO-",
+			"43-NUMERO DE MEDIDOR ERRADO-":"43-NUMERO DE MEDIDOR ERRADO-",
+			"44-IMPOSIBILIDAD POR OBSTACULOS-":"44-IMPOSIBILIDAD POR OBSTACULOS-",
+			"45-NICHO SELLADO CON CEMENTO-":"45-NICHO SELLADO CON CEMENTO-",
+			"49-VÁLVULA DE CORTE CON MANERAL DAÑADO-":"49-VÁLVULA DE CORTE CON MANERAL DAÑADO-",
+			"50-SIN VÁLVULA DE CORTE-":"50-SIN VÁLVULA DE CORTE-",
+			"52-VÁLVULA DE CORTE SIN MANERAL-":"52-VÁLVULA DE CORTE SIN MANERAL-",
+			"54-ADMON NO PERMITE ACCESO-":"54-ADMON NO PERMITE ACCESO-",
+			"55-CONECTORES OXIDADOS, PARTIDOS, NO SUELTAN, ENTREROSCADOS-":"55-CONECTORES OXIDADOS, PARTIDOS",
+			"61-MEDIDOR A MAS DE DOS METROS DE ALTURA-":"61-MEDIDOR A MAS DE DOS METROS DE ALTURA-",
+			"65-CLIENTE NO PERMITE EJECUTAR OPERACIÓN-":"65-CLIENTE NO PERMITE EJECUTAR OPERACIÓN-",
+			"66-NICHO CON CHAPA O CERRADURA-":"66-NICHO CON CHAPA O CERRADURA-",
+			"69-OPERACIÓN MAL CREADA-":"69-OPERACIÓN MAL CREADA-",
+			"70-NICHO FACIL ACCESO-":"70-NICHO FACIL ACCESO-",
+			"77-FUGAS AGUA ABAJO VÁLVULA DE CORTE-":"77-FUGAS AGUA ABAJO VÁLVULA DE CORTE-",
+			"78-FUGA NIVEL UNO AGUAS ARRIBA VÁLVULA DE CORTE-":"78-FUGA NIVEL UNO AGUAS ARRIBA VÁLVULA DE CORTE-",
+			"79-FUGA NIVEL DOS AGUAS ARRIBA VÁLVULA-":"79-FUGA NIVEL DOS AGUAS ARRIBA VÁLVULA-"
+	   }
+	},
+	"lectura": {
+        "Type": "String",
+		"Title":"LECTURA",
+        "id": "2",
+        "Default": "",
+        "Priority": "2"
+	},
+	"tipoCorte": {
+		"Type": "String",
+		"Title":"TIPO DE CORTE",
+		"id": "1",
+		"Default": "",
+		"Priority": "3",
+		"Options": {
+			"-SELECCIONAR-":"-SELECCIONAR-",
+			"3":"3",
+			"4":"4",
+			"5":"5",
+			"8":"8"
+		}
+	},
+	"resultado": {
+		"Type": "String",
+		"Title":"RESULTADO",
+		"id": "1",
+		"Default": "",
+		"Priority": "4",
+		"Options": {
+			"-SELECCIONAR-":"-SELECCIONAR-",
+			"10":"10",
+			"20":"20"
+		}
+	},
+	"informacionAdicional": {
+		"Type": "String",
+		"Title":"INFORMACION ADICIONAL",
+		"id": "1",
+		"Default": "",
+		"Priority": "5",
+		"Options": {
+			"-SELECCIONAR-":"-SELECCIONAR-",
+			"ZONA-555":"ZONA-555",
+			"Entidad Gubernamental":"Entidad Gubernamental"
+		}
+	},
+
+	"FOTO": {
+        "Type": "Image",
+	"Title":"FOTO",
+        "id": "11",
+        "Default": "",
+        "Priority": "6"
+	}
+
+}

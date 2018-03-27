@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">My app</string>
+    <string name="lectura_de_nota">Lectura de Nota</string>
+    <string name="lectura_de_factura">Lectura de Documento</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="usuario_contrasena_no">Usuario o contrasena no valido</string>
+    <string name="recordar_contrase_a">Recordar Contraseña</string>
+    <string name="cerrar_sesi_n">Cerrar Sesión</string>
+    <string name="direcci_n_del_servidor">Dirección del servidor</string>
+    <string name="Guardar">Guardar</string>
+    <string name="Cancelar">Cancelar</string>
+    <string name="Cerrar">Cerrar</string>
+    <string name="a_adir">Añadir</string>
+    <string name="quitar">Quitar</string>
+    <string name="Galeria">Galeria</string>
+    <string name="Cámara">Camara</string>
+    <string name="Contrase_a_Invalidad">Contraseña invalidad</string>
+    <string name="Contrase">Contraseña</string>
+    <string name="firmar">Firmar</string>
+    <string name="Se_eliminaran_todos_datos_">"Se eliminaran todos los datos. Desea continuar? "</string>
+    <string name="Cerrar_sesion">Cerrar sesión</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
