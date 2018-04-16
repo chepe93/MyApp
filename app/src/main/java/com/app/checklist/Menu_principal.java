@@ -12,7 +12,7 @@ import android.widget.Button;
 
 public class Menu_principal extends Fragment {
     View main_view;
-    Button btn_lienzo,btn_foto;
+    Button btn_lienzo,btn_foto,btn_video;
 
 
     @Override
@@ -21,6 +21,7 @@ public class Menu_principal extends Fragment {
         main_view=inflater.inflate(R.layout.fragment_menu_principal, container, false);
         btn_lienzo=(Button) main_view.findViewById(R.id.btn_lienzo);
         btn_foto=(Button) main_view.findViewById(R.id.btn_foto);
+        btn_video=(Button) main_view.findViewById(R.id.btn_video);
         btn_lienzo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,6 +37,17 @@ public class Menu_principal extends Fragment {
             @Override
             public void onClick(View view) {
                 final Fragment_Image newFragment = new Fragment_Image();
+                FragmentTransaction trans= AppState.fr_manager.beginTransaction();
+                trans.addToBackStack("");
+                trans.add(R.id.fragment_container, newFragment);
+                trans.commit();
+            }
+        });
+
+        btn_video.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Camera2VideoFragment newFragment = new Camera2VideoFragment();
                 FragmentTransaction trans= AppState.fr_manager.beginTransaction();
                 trans.addToBackStack("");
                 trans.add(R.id.fragment_container, newFragment);

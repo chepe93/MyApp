@@ -38,6 +38,13 @@
             android:drawableRight="@drawable/foto"
             style="@style/btn" />
 
+        <Button
+            android:text="Video"
+            android:gravity="center_vertical|center_horizontal"
+            android:id="@+id/btn_video"
+            android:drawableRight="@drawable/foto"
+            style="@style/btn" />
+
     </LinearLayout>
 </LinearLayout>
 

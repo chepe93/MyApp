@@ -57,6 +57,24 @@
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/tendero"/>
+        <ImageButton
+            android:layout_width="50dp"
+            android:background="@color/white"
+            android:padding="16dp"
+            android:id="@+id/btnRectangulo"
+            android:layout_height="50dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/rectangle"/>
+        <ImageButton
+            android:layout_width="50dp"
+            android:background="@color/white"
+            android:padding="16dp"
+            android:id="@+id/btnCirculo"
+            android:layout_height="50dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/circle"/>
     </LinearLayout>
     <RelativeLayout
         android:id="@+id/lienzo"

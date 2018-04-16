@@ -38,7 +38,7 @@ import me.panavtec.drawableview.DrawableViewConfig;
 
 public class Croquis extends Fragment implements View.OnClickListener{
     public View main_view;
-    ImageButton btnExhibidor,btnRefri,btnRepisa,btnVitrina,btnTendero;
+    ImageButton btnExhibidor,btnRefri,btnRepisa,btnVitrina,btnTendero,btnRectangulo,btnCirculo;
     ImageButton btnCancelar,btnSiguiente;
     RelativeLayout view;
     public Uri urlTrazo;
@@ -58,6 +58,8 @@ public class Croquis extends Fragment implements View.OnClickListener{
         btnRepisa=(ImageButton)main_view.findViewById(R.id.btnRepisa);
         btnVitrina=(ImageButton)main_view.findViewById(R.id.btnVitrina);
         btnTendero=(ImageButton)main_view.findViewById(R.id.btnTendero);
+        btnRectangulo=(ImageButton)main_view.findViewById(R.id.btnRectangulo);
+        btnCirculo=(ImageButton)main_view.findViewById(R.id.btnCirculo);
 
         btnCancelar=(ImageButton)main_view.findViewById(R.id.btnCancelar);
         btnSiguiente=(ImageButton)main_view.findViewById(R.id.btnSiguiente);
@@ -69,6 +71,8 @@ public class Croquis extends Fragment implements View.OnClickListener{
         btnRepisa.setOnClickListener(this);
         btnVitrina.setOnClickListener(this);
         btnTendero.setOnClickListener(this);
+        btnRectangulo.setOnClickListener(this);
+        btnCirculo.setOnClickListener(this);
 
         btnCancelar.setOnClickListener(this);
         btnSiguiente.setOnClickListener(this);
@@ -218,6 +222,24 @@ public class Croquis extends Fragment implements View.OnClickListener{
             case R.id.btnTendero:
                 option = new ImageView(getActivity());
                 option.setImageResource(R.drawable.tendero);
+                option.setLayoutParams(familyimagelayout);
+                option.setOnTouchListener(new ChoiceTouchListener());
+                option.setOnDragListener(new ChoiceDragListener());
+                view.addView(option);
+                break;
+
+            case R.id.btnRectangulo:
+                option = new ImageView(getActivity());
+                option.setImageResource(R.drawable.rectangle);
+                option.setLayoutParams(familyimagelayout);
+                option.setOnTouchListener(new ChoiceTouchListener());
+                option.setOnDragListener(new ChoiceDragListener());
+                view.addView(option);
+                break;
+
+            case R.id.btnCirculo:
+                option = new ImageView(getActivity());
+                option.setImageResource(R.drawable.circle);
                 option.setLayoutParams(familyimagelayout);
                 option.setOnTouchListener(new ChoiceTouchListener());
                 option.setOnDragListener(new ChoiceDragListener());
