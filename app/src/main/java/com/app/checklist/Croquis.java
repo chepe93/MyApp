@@ -164,7 +164,8 @@ public class Croquis extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        LinearLayout.LayoutParams familyimagelayout = new LinearLayout.LayoutParams(100,100);
+            LinearLayout.LayoutParams familyimagelayout = new LinearLayout.LayoutParams(100,100);
+            LinearLayout.LayoutParams familyimagelayout1 = new LinearLayout.LayoutParams(800,800);
         switch (v.getId()){
             case R.id.btnCancelar:
                 //finish();
@@ -231,7 +232,7 @@ public class Croquis extends Fragment implements View.OnClickListener{
             case R.id.btnRectangulo:
                 option = new ImageView(getActivity());
                 option.setImageResource(R.drawable.rectangle);
-                option.setLayoutParams(familyimagelayout);
+                option.setLayoutParams(familyimagelayout1);
                 option.setOnTouchListener(new ChoiceTouchListener());
                 option.setOnDragListener(new ChoiceDragListener());
                 view.addView(option);
@@ -240,7 +241,7 @@ public class Croquis extends Fragment implements View.OnClickListener{
             case R.id.btnCirculo:
                 option = new ImageView(getActivity());
                 option.setImageResource(R.drawable.circle);
-                option.setLayoutParams(familyimagelayout);
+                option.setLayoutParams(familyimagelayout1);
                 option.setOnTouchListener(new ChoiceTouchListener());
                 option.setOnDragListener(new ChoiceDragListener());
                 view.addView(option);

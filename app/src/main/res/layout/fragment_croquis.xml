@@ -7,105 +7,115 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context="com.app.checklist.Croquis">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_height="wrap_content">
+        android:gravity="center">
+
         <ImageButton
-            android:layout_width="50dp"
-            android:background="@color/white"
             android:id="@+id/btnExhibidor"
-            android:padding="16dp"
-            android:layout_height="50dp"
+            android:layout_width="54dp"
+            android:layout_height="60dp"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/exhibidor"/>
-        <ImageButton
-            android:layout_width="50dp"
             android:background="@color/white"
             android:padding="16dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/exhibidor" />
+
+        <ImageButton
             android:id="@+id/btnRefri"
-            android:layout_height="50dp"
+            android:layout_width="48dp"
+            android:layout_height="60dp"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/refri"/>
-        <ImageButton
-            android:layout_width="50dp"
             android:background="@color/white"
             android:padding="16dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/refri" />
+
+        <ImageButton
             android:id="@+id/btnRepisa"
-            android:layout_height="50dp"
+            android:layout_width="57dp"
+            android:layout_height="60dp"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/repi"/>
-        <ImageButton
-            android:layout_width="50dp"
             android:background="@color/white"
             android:padding="16dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/repi" />
+
+        <ImageButton
             android:id="@+id/btnVitrina"
-            android:layout_height="50dp"
+            android:layout_width="57dp"
+            android:layout_height="60dp"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/vitrina"/>
-        <ImageButton
-            android:layout_width="50dp"
             android:background="@color/white"
             android:padding="16dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/vitrina" />
+
+        <ImageButton
             android:id="@+id/btnTendero"
-            android:layout_height="50dp"
+            android:layout_width="55dp"
+            android:layout_height="60dp"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/tendero"/>
-        <ImageButton
-            android:layout_width="50dp"
             android:background="@color/white"
             android:padding="16dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/tendero" />
+
+        <ImageButton
             android:id="@+id/btnRectangulo"
-            android:layout_height="50dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/rectangle"/>
-        <ImageButton
             android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
             android:background="@color/white"
             android:padding="16dp"
-            android:id="@+id/btnCirculo"
-            android:layout_height="50dp"
-            android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/circle"/>
+            app:srcCompat="@drawable/rectangle" />
+
+        <ImageButton
+            android:id="@+id/btnCirculo"
+            android:layout_width="55dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:background="@color/white"
+            android:padding="16dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/circle" />
     </LinearLayout>
+
     <RelativeLayout
         android:id="@+id/lienzo"
-        android:orientation="horizontal"
-        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="8dp">
+        android:layout_height="469dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:gravity="center"
+        android:layout_height="41dp"
         android:layout_marginTop="16dp"
-        android:layout_height="wrap_content">
+        android:gravity="center">
 
         <ImageButton
-            android:layout_width="70dp"
-            android:background="@color/white"
             android:id="@+id/btnCancelar"
-            android:padding="16dp"
-            android:layout_height="70dp"
-            app:srcCompat="@drawable/ic_close_black_24dp"/>
-        <ImageButton
             android:layout_width="wrap_content"
+            android:layout_height="70dp"
             android:background="@color/white"
-            android:id="@+id/btnSiguiente"
             android:padding="16dp"
+            app:srcCompat="@drawable/ic_close_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/btnSiguiente"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/ic_check_black_24dp"/>
+            android:background="@color/white"
+            android:padding="16dp"
+            app:srcCompat="@drawable/ic_check_black_24dp" />
     </LinearLayout>
 
 </LinearLayout>
