@@ -45,7 +45,7 @@ public class Croquis extends Fragment implements View.OnClickListener{
     private int _xDelta;
     private int _yDelta;
     Bitmap croquis;
-    String pruebaGithub="hola";
+    String pruebaGithub="hola errores";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
