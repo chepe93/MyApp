@@ -166,7 +166,7 @@ public class Croquis extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
             LinearLayout.LayoutParams familyimagelayout = new LinearLayout.LayoutParams(100,100);
-            LinearLayout.LayoutParams familyimagelayout1 = new LinearLayout.LayoutParams(800,800);
+            LinearLayout.LayoutParams familyimagelayout1 = new LinearLayout.LayoutParams(750,750);
         switch (v.getId()){
             case R.id.btnCancelar:
                 //finish();
@@ -247,6 +247,9 @@ public class Croquis extends Fragment implements View.OnClickListener{
                 option.setOnDragListener(new ChoiceDragListener());
                 view.addView(option);
                 break;
+
         }
     }
+
+
 }
