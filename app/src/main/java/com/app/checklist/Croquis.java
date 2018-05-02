@@ -36,6 +36,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
 
 //import ulr.co.setab.phothoview.PhotoViewAtacher;
 
@@ -246,6 +247,7 @@ public class Croquis extends Fragment implements View.OnClickListener{
                     ((ImageView) view).setImageDrawable(getResources().getDrawable(R.drawable.ic_check_black_24dp));
                     ((ImageView) image).setImageDrawable(null);
 
+                    image.getId();
                     break;
                 case DragEvent.ACTION_DRAG_ENDED:
                     break;
@@ -254,10 +256,13 @@ public class Croquis extends Fragment implements View.OnClickListener{
         }
     }
 
-    @Override
+   /* @Override
     public boolean onLongClick(View v){
-        
-    }
+
+    }*/
+
+    /*arreglo de imageview*/
+    ArrayList<ImageView> imagenes= new ArrayList <ImageView> ();
 
     @Override
     public void onClick(View v) {
@@ -290,6 +295,8 @@ public class Croquis extends Fragment implements View.OnClickListener{
                 option.setLayoutParams(familyimagelayout);
                 option.setOnTouchListener(new ChoiceTouchListener());
                 option.setOnDragListener(new ChoiceDragListener());
+                option.setId(imagenes.size());
+                imagenes.add(option);
                 view.addView(option);
                 break;
             case R.id.btnRefri:
@@ -298,6 +305,8 @@ public class Croquis extends Fragment implements View.OnClickListener{
                 option.setLayoutParams(familyimagelayout);
                 option.setOnTouchListener(new ChoiceTouchListener());
                 option.setOnDragListener(new ChoiceDragListener());
+                option.setId(imagenes.size());
+                imagenes.add(option);
                 view.addView(option);
                 break;
             case R.id.btnRepisa:
@@ -306,6 +315,8 @@ public class Croquis extends Fragment implements View.OnClickListener{
                 option.setLayoutParams(familyimagelayout);
                 option.setOnTouchListener(new ChoiceTouchListener());
                 option.setOnDragListener(new ChoiceDragListener());
+                option.setId(imagenes.size());
+                imagenes.add(option);
                 view.addView(option);
                 break;
             case R.id.btnVitrina:
@@ -314,6 +325,8 @@ public class Croquis extends Fragment implements View.OnClickListener{
                 option.setLayoutParams(familyimagelayout);
                 option.setOnTouchListener(new ChoiceTouchListener());
                 option.setOnDragListener(new ChoiceDragListener());
+                option.setId(imagenes.size());
+                imagenes.add(option);
                 view.addView(option);
                 break;
 
@@ -323,6 +336,8 @@ public class Croquis extends Fragment implements View.OnClickListener{
                 option.setLayoutParams(familyimagelayout);
                 option.setOnTouchListener(new ChoiceTouchListener());
                 option.setOnDragListener(new ChoiceDragListener());
+                option.setId(imagenes.size());
+                imagenes.add(option);
                 view.addView(option);
                 break;
 
@@ -332,6 +347,8 @@ public class Croquis extends Fragment implements View.OnClickListener{
                 option.setLayoutParams(familyimagelayout1);
                 option.setOnTouchListener(new ChoiceTouchListener());
                 option.setOnDragListener(new ChoiceDragListener());
+                option.setId(imagenes.size());
+                imagenes.add(option);
                 view.addView(option);
                 break;
 
@@ -343,8 +360,14 @@ public class Croquis extends Fragment implements View.OnClickListener{
                 option.setLayoutParams(familyimagelayout1);
                 option.setOnTouchListener(new ChoiceTouchListener());
                 option.setOnDragListener(new ChoiceDragListener());
+                option.setId(imagenes.size());
+                imagenes.add(option);
                 view.addView(option);
                 break;
+
+            
+
+
 
         }
     }
