@@ -365,7 +365,7 @@ public class Croquis extends Fragment implements View.OnClickListener{
                 view.addView(option);
                 break;
 
-            
+
 
 
 
