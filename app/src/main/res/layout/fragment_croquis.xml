@@ -85,8 +85,8 @@
             app:srcCompat="@drawable/circle" />
     </LinearLayout>
 
-    <FrameLayout android:layout_height="420dp"
-        android:layout_width="500dp">
+    <FrameLayout android:layout_height="match_parent"
+        android:layout_width="469dp">
 
         <RelativeLayout
 
