@@ -169,6 +169,9 @@ public class Croquis extends Fragment{
                     dx = event.getRawX() - parms.leftMargin;
                     dy = event.getRawY() - parms.topMargin;
                     mode = DRAG;
+                    for(int i=0;i<imagenes.size();i++){
+                        imagenes.get(i).setEnabled(true);
+                    }
                     break;
 
                 case MotionEvent.ACTION_POINTER_DOWN:
@@ -275,6 +278,9 @@ public class Croquis extends Fragment{
                     ((ImageView) image).setImageDrawable(null);
 
                     image.getId();
+                    for(int i=0;i<imagenes.size();i++){
+                        imagenes.get(i).setEnabled(true);
+                    }
                     break;
                 case DragEvent.ACTION_DRAG_ENDED:
                     break;
