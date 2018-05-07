@@ -45,7 +45,7 @@ import me.panavtec.drawableview.DrawableViewConfig;
 
 
 
-public class Croquis extends Fragment implements View.OnClickListener{
+public class Croquis extends Fragment{
     public View main_view;
     ImageButton btnExhibidor,btnRefri,btnRepisa,btnVitrina,btnTendero,btnRectangulo,btnCirculo;
     ImageButton btnCancelar,btnSiguiente;
@@ -66,6 +66,11 @@ public class Croquis extends Fragment implements View.OnClickListener{
     private float oldDist = 1f;
     private float d = 0f;
     private float newRot = 0f;
+
+    /*arreglo de imageview*/
+    ArrayList<ImageView> imagenes= new ArrayList <ImageView> ();
+    LinearLayout.LayoutParams familyimagelayout = new LinearLayout.LayoutParams(100,100);
+    LinearLayout.LayoutParams familyimagelayout1 = new LinearLayout.LayoutParams(750,750);
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -90,8 +95,21 @@ public class Croquis extends Fragment implements View.OnClickListener{
 
         view = (RelativeLayout) main_view.findViewById(R.id.lienzo);
 
-        btnExhibidor.setOnClickListener(this);
-        btnRefri.setOnClickListener(this);
+        btnExhibidor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view1) {
+                ImageView option = new ImageView(getActivity());
+                option.setImageResource(R.drawable.exhibidor);
+
+                option.setLayoutParams(familyimagelayout);
+                option.setOnTouchListener(new ChoiceTouchListener());
+                option.setOnDragListener(new ChoiceDragListener());
+                option.setId(imagenes.size());
+                imagenes.add(option);
+                view.addView(option);
+            }
+        });
+        /*btnRefri.setOnClickListener(this);
         btnRepisa.setOnClickListener(this);
         btnVitrina.setOnClickListener(this);
         btnTendero.setOnClickListener(this);
@@ -99,7 +117,7 @@ public class Croquis extends Fragment implements View.OnClickListener{
         btnCirculo.setOnClickListener(this);
 
         btnCancelar.setOnClickListener(this);
-        btnSiguiente.setOnClickListener(this);
+        btnSiguiente.setOnClickListener(this);*/
         if(urlTrazo !=null){
             InputStream inputStream = null;
             try {
@@ -262,123 +280,6 @@ public class Croquis extends Fragment implements View.OnClickListener{
                     break;
             }
             return true;
-        }
-    }
-
-   /* @Override
-    public boolean onLongClick(View v){
-
-    }*/
-
-    /*arreglo de imageview*/
-    ArrayList<ImageView> imagenes= new ArrayList <ImageView> ();
-
-    @Override
-    public void onClick(View v) {
-            LinearLayout.LayoutParams familyimagelayout = new LinearLayout.LayoutParams(100,100);
-            LinearLayout.LayoutParams familyimagelayout1 = new LinearLayout.LayoutParams(750,750);
-
-        switch (v.getId()){
-            case R.id.btnCancelar:
-                //finish();
-                AppState.fr_manager.popBackStack();
-                break;
-            case R.id.btnSiguiente:
-                Canvas c = new Canvas(croquis);
-                view.draw(c);
-                if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.HONEYCOMB){
-                    new SaveBitmapToDeviceTask(getActivity(),String.valueOf("Croquis"),String.valueOf("Croquis")).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,croquis);
-                }else{
-                    new SaveBitmapToDeviceTask(getActivity(),String.valueOf("Croquis"),String.valueOf("Croquis")).execute(croquis);
-                }
-
-                Menu_principal list = new Menu_principal();
-                FragmentTransaction trans=AppState.fr_manager.beginTransaction();
-                trans.replace(R.id.fragment_container, list,"");
-                trans.commit();
-                break;
-
-            case R.id.btnExhibidor:
-                ImageView option = new ImageView(getActivity());
-                option.setImageResource(R.drawable.exhibidor);
-
-                option.setLayoutParams(familyimagelayout);
-                option.setOnTouchListener(new ChoiceTouchListener());
-                option.setOnDragListener(new ChoiceDragListener());
-                option.setId(imagenes.size());
-                imagenes.add(option);
-                view.addView(option);
-                break;
-            case R.id.btnRefri:
-                option = new ImageView(getActivity());
-                option.setImageResource(R.drawable.refri);
-                option.setLayoutParams(familyimagelayout);
-                option.setOnTouchListener(new ChoiceTouchListener());
-                option.setOnDragListener(new ChoiceDragListener());
-                option.setId(imagenes.size());
-                imagenes.add(option);
-                view.addView(option);
-                break;
-            case R.id.btnRepisa:
-                option = new ImageView(getActivity());
-                option.setImageResource(R.drawable.repi);
-                option.setLayoutParams(familyimagelayout);
-                option.setOnTouchListener(new ChoiceTouchListener());
-                option.setOnDragListener(new ChoiceDragListener());
-                option.setId(imagenes.size());
-                imagenes.add(option);
-                view.addView(option);
-                break;
-            case R.id.btnVitrina:
-                option = new ImageView(getActivity());
-                option.setImageResource(R.drawable.vitrina);
-                option.setLayoutParams(familyimagelayout);
-                option.setOnTouchListener(new ChoiceTouchListener());
-                option.setOnDragListener(new ChoiceDragListener());
-                option.setId(imagenes.size());
-                imagenes.add(option);
-                view.addView(option);
-                break;
-
-            case R.id.btnTendero:
-                option = new ImageView(getActivity());
-                option.setImageResource(R.drawable.tendero);
-                option.setLayoutParams(familyimagelayout);
-                option.setOnTouchListener(new ChoiceTouchListener());
-                option.setOnDragListener(new ChoiceDragListener());
-                option.setId(imagenes.size());
-                imagenes.add(option);
-                view.addView(option);
-                break;
-
-            case R.id.btnRectangulo:
-                option = new ImageView(getActivity());
-                option.setImageResource(R.drawable.rectangle);
-                option.setLayoutParams(familyimagelayout1);
-                option.setOnTouchListener(new ChoiceTouchListener());
-                option.setOnDragListener(new ChoiceDragListener());
-                option.setId(imagenes.size());
-                imagenes.add(option);
-                view.addView(option);
-                break;
-
-
-
-            case R.id.btnCirculo:
-                option = new ImageView(getActivity());
-                option.setImageResource(R.drawable.circle);
-                option.setLayoutParams(familyimagelayout1);
-                option.setOnTouchListener(new ChoiceTouchListener());
-                option.setOnDragListener(new ChoiceDragListener());
-                option.setId(imagenes.size());
-                imagenes.add(option);
-                view.addView(option);
-                break;
-
-
-
-
-
         }
     }
 
