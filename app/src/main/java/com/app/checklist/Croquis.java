@@ -69,7 +69,7 @@ public class Croquis extends Fragment{
 
     /*arreglo de imageview*/
     ArrayList<ImageView> imagenes= new ArrayList <ImageView> ();
-    LinearLayout.LayoutParams familyimagelayout = new LinearLayout.LayoutParams(100,100);
+    LinearLayout.LayoutParams familyimagelayout = new LinearLayout.LayoutParams(200,200);
     LinearLayout.LayoutParams familyimagelayout1 = new LinearLayout.LayoutParams(750,750);
 
     @Override
@@ -103,21 +103,104 @@ public class Croquis extends Fragment{
 
                 option.setLayoutParams(familyimagelayout);
                 option.setOnTouchListener(new ChoiceTouchListener());
-                option.setOnDragListener(new ChoiceDragListener());
                 option.setId(imagenes.size());
                 imagenes.add(option);
                 view.addView(option);
             }
         });
-        /*btnRefri.setOnClickListener(this);
-        btnRepisa.setOnClickListener(this);
-        btnVitrina.setOnClickListener(this);
-        btnTendero.setOnClickListener(this);
-        btnRectangulo.setOnClickListener(this);
-        btnCirculo.setOnClickListener(this);
+         btnRefri.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view1) {
+                ImageView option = new ImageView(getActivity());
+                option.setImageResource(R.drawable.refri);
 
-        btnCancelar.setOnClickListener(this);
-        btnSiguiente.setOnClickListener(this);*/
+                option.setLayoutParams(familyimagelayout);
+                option.setOnTouchListener(new ChoiceTouchListener());
+                option.setId(imagenes.size());
+                imagenes.add(option);
+                view.addView(option);
+
+                }
+        });
+
+        btnRepisa.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view1) {
+                ImageView option = new ImageView(getActivity());
+                option.setImageResource(R.drawable.repi);
+
+                option.setLayoutParams(familyimagelayout);
+                option.setOnTouchListener(new ChoiceTouchListener());
+                option.setId(imagenes.size());
+                imagenes.add(option);
+                view.addView(option);
+
+            }
+        });
+        btnVitrina.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view1){
+                    ImageView option = new ImageView(getActivity());
+                    option.setImageResource(R.drawable.vitrina);
+
+                    option.setLayoutParams(familyimagelayout);
+                    option.setOnTouchListener(new ChoiceTouchListener());
+                    option.setId(imagenes.size());
+                    imagenes.add(option);
+                    view.addView(option);
+                }
+        });
+
+
+        btnTendero.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view1){
+                ImageView option = new ImageView(getActivity());
+                option.setImageResource(R.drawable.tendero);
+
+                option.setLayoutParams(familyimagelayout);
+                option.setOnTouchListener(new ChoiceTouchListener());
+                option.setId(imagenes.size());
+                imagenes.add(option);
+                view.addView(option);
+            }
+        });
+        btnRectangulo.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view1){
+                ImageView option = new ImageView(getActivity());
+                option.setImageResource(R.drawable.rectangle);
+
+                option.setLayoutParams(familyimagelayout1);
+                option.setOnTouchListener(new ChoiceTouchListener());
+                option.setId(imagenes.size());
+                imagenes.add(option);
+                view.addView(option);
+            }
+        });
+        btnCirculo.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view1){
+                ImageView option = new ImageView(getActivity());
+                option.setImageResource(R.drawable.circle);
+
+                option.setLayoutParams(familyimagelayout1);
+                option.setOnTouchListener(new ChoiceTouchListener());
+                option.setId(imagenes.size());
+                imagenes.add(option);
+                view.addView(option);
+            }
+        });
+
+        btnCancelar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view1){
+                AppState.fr_manager.popBackStack();
+        }});
+
+        /*btnSiguiente.setOnClickListener(this);*/
+
+
         if(urlTrazo !=null){
             InputStream inputStream = null;
             try {
@@ -154,15 +237,11 @@ public class Croquis extends Fragment{
         public boolean onTouch(View v, MotionEvent event) {
             final ImageView view = (ImageView) v;
 
-            for(int i=0;i<imagenes.size();i++){
-                if(view.getId()!=imagenes.get(i).getId()){
-                    imagenes.get(i).setEnabled(false );
-                }
-            }
+
             ((BitmapDrawable) view.getDrawable()).setAntiAlias(true);
             switch (event.getAction() & MotionEvent.ACTION_MASK) {
                 case MotionEvent.ACTION_DOWN:
-
+                    System.out.println("touch action down "+event.getAction());
                     parms = (RelativeLayout.LayoutParams) view.getLayoutParams();
                     startwidth = parms.width;
                     startheight = parms.height;
@@ -170,28 +249,45 @@ public class Croquis extends Fragment{
                     dy = event.getRawY() - parms.topMargin;
                     mode = DRAG;
                     for(int i=0;i<imagenes.size();i++){
-                        imagenes.get(i).setEnabled(true);
+                        if(view.getId()!=imagenes.get(i).getId()){
+                            imagenes.get(i).setVisibility(View.VISIBLE );
+                        }
                     }
                     break;
 
                 case MotionEvent.ACTION_POINTER_DOWN:
+                    System.out.println("touch pointer down"+event.getAction());
                     oldDist = spacing(event);
                     if (oldDist > 10f) {
                         mode = ZOOM;
                     }
 
                     d = rotation(event);
-
+                    for(int i=0;i<imagenes.size();i++){
+                        imagenes.get(i).setVisibility(View.VISIBLE );
+                    }
                     break;
                 case MotionEvent.ACTION_UP:
-
+                    System.out.println("touch action up"+event.getAction());
+                    for(int i=0;i<imagenes.size();i++){
+                        imagenes.get(i).setVisibility(View.VISIBLE );
+                    }
                     break;
 
                 case MotionEvent.ACTION_POINTER_UP:
+                    System.out.println("touch pointer up"+event.getAction());
                     mode = NONE;
-
+                    for(int i=0;i<imagenes.size();i++){
+                        imagenes.get(i).setVisibility(View.VISIBLE );
+                    }
                     break;
                 case MotionEvent.ACTION_MOVE:
+                    System.out.println("touch action move"+event.getAction());
+                    for(int i=0;i<imagenes.size();i++){
+                        if(view.getId()!=imagenes.get(i).getId()){
+                            imagenes.get(i).setVisibility(View.VISIBLE );
+                        }
+                    }
                     if (mode == DRAG) {
 
                         x = event.getRawX();
@@ -251,41 +347,6 @@ public class Croquis extends Fragment{
             }
             return true;
 
-        }
-    }
-
-    private class ChoiceDragListener implements View.OnDragListener{
-
-
-       /* for()
-            if()
-        */
-        @Override
-        public boolean onDrag(View view, DragEvent dragEvent) {
-            switch(dragEvent.getAction()){
-                case DragEvent.ACTION_DRAG_STARTED:
-                    break;
-
-                case DragEvent.ACTION_DRAG_ENTERED:
-                    break;
-
-                case DragEvent.ACTION_DRAG_EXITED:
-                    break;
-
-                case DragEvent.ACTION_DROP:
-                    ImageView image = (ImageView) dragEvent.getLocalState();
-                    ((ImageView) view).setImageDrawable(getResources().getDrawable(R.drawable.ic_check_black_24dp));
-                    ((ImageView) image).setImageDrawable(null);
-
-                    image.getId();
-                    for(int i=0;i<imagenes.size();i++){
-                        imagenes.get(i).setEnabled(true);
-                    }
-                    break;
-                case DragEvent.ACTION_DRAG_ENDED:
-                    break;
-            }
-            return true;
         }
     }
 

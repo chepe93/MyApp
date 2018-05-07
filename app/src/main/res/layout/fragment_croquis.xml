@@ -85,14 +85,15 @@
             app:srcCompat="@drawable/circle" />
     </LinearLayout>
 
-    <FrameLayout android:layout_height="match_parent"
-        android:layout_width="469dp">
+    <FrameLayout
+        android:layout_width="469dp"
+        android:layout_height="419dp">
 
         <RelativeLayout
 
             android:id="@+id/lienzo"
             android:layout_width="match_parent"
-            android:layout_height="469dp"
+            android:layout_height="match_parent"
             android:layout_marginBottom="8dp"
             android:layout_weight="1"
             android:clickable="true"
@@ -102,15 +103,15 @@
     </FrameLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="41dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="374dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="0dp"
         android:gravity="center">
 
         <ImageButton
             android:id="@+id/btnCancelar"
             android:layout_width="wrap_content"
-            android:layout_height="70dp"
+            android:layout_height="72dp"
             android:background="@color/white"
             android:padding="16dp"
             app:srcCompat="@drawable/ic_close_black_24dp" />
@@ -118,7 +119,7 @@
         <ImageButton
             android:id="@+id/btnSiguiente"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="72dp"
             android:background="@color/white"
             android:padding="16dp"
             app:srcCompat="@drawable/ic_check_black_24dp" />
