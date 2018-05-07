@@ -136,6 +136,11 @@ public class Croquis extends Fragment implements View.OnClickListener{
         public boolean onTouch(View v, MotionEvent event) {
             final ImageView view = (ImageView) v;
 
+            for(int i=0;i<imagenes.size();i++){
+                if(view.getId()!=imagenes.get(i).getId()){
+                    imagenes.get(i).setEnabled(false );
+                }
+            }
             ((BitmapDrawable) view.getDrawable()).setAntiAlias(true);
             switch (event.getAction() & MotionEvent.ACTION_MASK) {
                 case MotionEvent.ACTION_DOWN:
@@ -230,6 +235,10 @@ public class Croquis extends Fragment implements View.OnClickListener{
 
     private class ChoiceDragListener implements View.OnDragListener{
 
+
+       /* for()
+            if()
+        */
         @Override
         public boolean onDrag(View view, DragEvent dragEvent) {
             switch(dragEvent.getAction()){
@@ -268,6 +277,7 @@ public class Croquis extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
             LinearLayout.LayoutParams familyimagelayout = new LinearLayout.LayoutParams(100,100);
             LinearLayout.LayoutParams familyimagelayout1 = new LinearLayout.LayoutParams(750,750);
+
         switch (v.getId()){
             case R.id.btnCancelar:
                 //finish();

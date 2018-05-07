@@ -85,15 +85,21 @@
             app:srcCompat="@drawable/circle" />
     </LinearLayout>
 
-    <RelativeLayout
-        android:id="@+id/lienzo"
-        android:layout_width="match_parent"
-        android:layout_height="469dp"
-        android:layout_marginBottom="8dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+    <FrameLayout android:layout_height="420dp"
+        android:layout_width="500dp">
 
-    </RelativeLayout>
+        <RelativeLayout
+
+            android:id="@+id/lienzo"
+            android:layout_width="match_parent"
+            android:layout_height="469dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:orientation="horizontal">
+
+        </RelativeLayout>
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
